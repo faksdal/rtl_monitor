@@ -8,8 +8,25 @@
 #include <climits>
 
 #include "../include/rtl_device.h"
+#include "version.h"
 
-//#define __MAJOR_VERSION__  "0.1.0"
+
+
+// Print usage/help text
+static void print_help(const char *progname)
+{
+    std::cout << "Usage: " << (progname ? progname : "rtl_monitor") << " [options]\n"
+              << "\n"
+              << "Options:\n"
+              << "  -f, --freq <Hz>             Center frequency in Hz (default 94800000)\n"
+              << "  -s, --sample-rate <Hz>      Sample rate in Hz (default 2400000)\n"
+              << "  -n, --number-of-samples <N> Number of complex samples to capture (default 262144 (2e18))\n"
+              << "  -v, --version               Print version and exit\n"
+              << "  -h, --help                  Show this help message\n"
+              << "\n"
+              << "Example:\n"
+              << "  " << (progname ? progname : "rtl_monitor") << " -f 100000000 -s 2400000 -n 262144\n";
+}
 
 
 
@@ -101,11 +118,13 @@ int main(int argc, char **argv)
                             break;
                         }
 
-            case 'v':   //std::cout << "rtl_monitor version " << __MAJOR_VERSION__ << std::endl << "By jole 2025" << std::endl;
-                        break;
+            case 'v':   {
+                            std::cout << "RTL-SDR power reader, version " << rtl_monitor::version << std::endl << "By jole 2025" << std::endl;
+                            return 0;
+                        }
 
-            case 'h':   std::cout <<"Help option selected\n";
-                        break;
+            case 'h':   print_help(argv[0]);
+                        return 0;
 
             default:    break;
 
