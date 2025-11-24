@@ -1,0 +1,20 @@
+# Build artifacts
+/build/
+/CMakeFiles/
+/CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+*.o
+*.obj
+*.exe
+*.out
+rtl_monitor
+
+# Editor / OS
+.vscode/
+*.swp
+*~
+.DS_Store
+
+# Logs
+*.log
