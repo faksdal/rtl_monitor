@@ -47,7 +47,7 @@ void RTLDevice::close()
 
 bool RTLDevice::setFrequency(uint32_t hz)
 {
-    std::cout << "Setting frequency to " << hz << "Hz\n";
+    std::cout << "Setting frequency to " << hz << " Hz\n";
     return rtlsdr_set_center_freq(dev, hz) == 0;
 }
 
@@ -55,7 +55,7 @@ bool RTLDevice::setFrequency(uint32_t hz)
 
 bool RTLDevice::setSampleRate(uint32_t hz)
 {
-    std::cout << "Setting sample rate to " << hz << "/s\n";
+    std::cout << "Setting sample rate to " << hz << " S/s\n";
     return rtlsdr_set_sample_rate(dev, hz) == 0;
 }
 
