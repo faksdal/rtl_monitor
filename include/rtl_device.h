@@ -1,7 +1,10 @@
 #pragma once
+
 #include <string>
 #include <cstdint>
 #include <rtl-sdr.h>
+
+
 
 class RTLDevice
 {
